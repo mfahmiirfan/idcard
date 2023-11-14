@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirect index.html to manage-print-idcards.html
+RewriteRule ^$ /idcard/manage-print-idcards.html [L,R=301]
+# RewriteRule ^debug$ phpinfo.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php/$1 [L]
